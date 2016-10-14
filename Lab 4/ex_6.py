@@ -3,16 +3,16 @@ import json
 import sys
 from librip.ctxmngrs import timer
 from librip.decorators import print_result
-from librip.gens import field, gen_random
+from librip.gen import field, gen_random
 from librip.iterators import Unique as unique
 
-path = None
+path = sys.argv[1]
 
 # Здесь необходимо в переменную path получить
 # путь до файла, который был передан при запуске
 
-with open(path) as f:
-    data = json.load(f)
+with open(path, encoding="utf8") as f:
+	data = json.load(f)
 
 
 # Далее необходимо реализовать все функции по заданию, заменив `raise NotImplemented`
@@ -23,23 +23,23 @@ with open(path) as f:
 
 @print_result
 def f1(arg):
-    raise NotImplemented
+	return sorted(unique(field(arg, 'job-name'), ignore_case=True), key=str.lower)
 
 
 @print_result
 def f2(arg):
-    raise NotImplemented
+	return list(filter(lambda x: str(x).lower().startswith('программист'), arg))
 
 
 @print_result
 def f3(arg):
-    raise NotImplemented
+	return ["{} с опытом Python".format(x) for x in arg]
 
 
 @print_result
 def f4(arg):
-    raise NotImplemented
+	return ["{}, зарплата {} руб.".format(work, salary) for (work, salary) in zip(arg, gen_random(100000, 200000, len(arg)))]
 
 
 with timer():
-    f4(f3(f2(f1(data))))
+	f4(f3(f2(f1(data))))
