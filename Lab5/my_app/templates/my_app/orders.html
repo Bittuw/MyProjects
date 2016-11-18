@@ -1,0 +1,16 @@
+{% extends 'my_app\index.html' %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css\bootstrap.css' %}">
+
+{% block title %}Заказы{% endblock%}
+
+{% block body %}
+	<ul>
+		{% for order in orders%}
+			<li><a href= "{% url 'order_url' order.id %}">{{order.title}}</a></li>
+		{% empty %}
+			<li>Пусто</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

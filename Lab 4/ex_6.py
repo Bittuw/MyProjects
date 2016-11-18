@@ -11,7 +11,7 @@ path = sys.argv[1]
 # Здесь необходимо в переменную path получить
 # путь до файла, который был передан при запуске
 
-with open(path, encoding="utf8") as f:
+with open(path, encoding="UTF-8") as f:
 	data = json.load(f)
 
 
@@ -23,12 +23,12 @@ with open(path, encoding="utf8") as f:
 
 @print_result
 def f1(arg):
-	return sorted(unique(field(arg, 'job-name'), ignore_case=True), key=str.lower)
+	return sorted(unique(field(arg, 'job-name'), ignore_case=True), key=lambda x : x.lower())
 
 
 @print_result
 def f2(arg):
-	return list(filter(lambda x: str(x).lower().startswith('программист'), arg))
+	return filter(lambda x: str(x).lower().startswith('программист'), arg)
 
 
 @print_result

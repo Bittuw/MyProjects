@@ -11,7 +11,6 @@ from random import randint
 # field(goods, 'title', 'price') должен выдавать {'title': 'Ковер', 'price': 2000}, {'title': 'Диван для отдыха', 'price': 5300}
 
 def field(items, *args):
-	print("yes")
 	assert len(args) > 0, "Not specified search parameter!"
 	assert isinstance(items, list), "The function accepts only list!"
 	for item in items:

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css\bootstrap.css' %}">
+		<script src="{% static 'my_app\js\bootstrap.js' %}"></script>
+		<meta charset="UTF-8">
+		<title>{% block title %}{% endblock %}</title>
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-5 col-md-offset-5">
+				Общая часть
+			</div>
+		</div>
+		<div>
+			{% block body %}Переопределение{% endblock %}
+		</div>
+	</body>
+</html>
