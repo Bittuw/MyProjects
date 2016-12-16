@@ -1,0 +1,11 @@
+{% extends "my_app\index.html" %}
+
+{% block title %}Концерты{% endblock %}
+
+{% block body %}
+	<ul>
+		{% for Consert in conserts %}
+			<li> {{ Consert }}</li>	
+		{% endfor %}
+	</ul>
+{% endblock %}
