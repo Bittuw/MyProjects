@@ -19,7 +19,7 @@ from my_app.views import OrderView
 from my_app.views import OrdersView
 
 urlpatterns = [
-	url(r'^admin/', admin.site.urls),
-	url(r'orders/', OrdersView.as_view(), name = 'orders_url'),
-	url(r'^order/(?P<id>\d+)', OrderView.as_view(), name = "order_url"),
+	url(r'^admin/$', admin.site.urls),
+	url(r'orders/$', OrdersView.as_view(), name = 'orders_url'),
+	url(r'^order/(?P<id>\d+)$', OrderView.as_view(), name = "order_url"),
 ]

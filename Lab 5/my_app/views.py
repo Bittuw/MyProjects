@@ -7,7 +7,9 @@ class OrdersView(View):
 			'orders': [
 				{'title':'Первый заказ', 'id':1},
 				{'title':'Второй заказ', 'id':2},
-				{'title':'Третий заказ', 'id':3}
+				{'title':'Третий заказ', 'id':3},
+				{'title':'Четвертый заказ', 'id':4},
+				{'title':'Пятый заказ','id':5}
 			]
 		}
 		return render(request, 'my_app\orders.html', data)
