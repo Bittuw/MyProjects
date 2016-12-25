@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Тестирование 
+{% endblock %}
+
+{% block script %}
+    {% load static %}
+    <script src="{% static 'js/my-script.js' %}"></script>
+{% endblock %}
+
+{% block nav %}
+    Номер вопроса: {{ count }}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="bs-example">
+            <pre>
+                <code>
+                    {{ question.text_question }}
+                </code>
+            </pre>
+        </div>
+
+        
+        {% csrf_token %}
+        <input type="hidden" name="time" id="time">
+        <div class="container" id="addbtn">
+            <button class="btn btn-default" onclick="location.href='../answer'" type="submit">Ответить</button>
+            {% if count >= 5 %}
+                <button class="btn btn-default" onclick="location.href='../exit'">Выйти</button>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

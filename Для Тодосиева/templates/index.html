@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+
+        {% load static %}
+
+        <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        {% block script %}{% endblock %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/my-css.css' %}">
+        
+
+        <title>{% block title %}Психология программирования{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="header clearfix">
+                  <nav>
+                    <div class="nav navbar-nav navbar-right">
+                        <a class="navbar-brand" href="#">
+                            <img alt="Brand" class="img-size img-circle" src="{% static 'polls/pict/bmstu-emblem.png' %}">
+                        </a>
+                    </div>
+                </nav>
+
+                <h3>{% block nav %}Тест: &#171;Психология языков программирования&#187;{% endblock %}</h3>
+
+            </div>
+
+            {% block content %}
+            <div class="jumbotron text-center">
+
+                <h1>Приветствуем вас на странице теста "Психология языков программирования".</h1> 
+
+                <br>
+
+                <p class="lead">Этот эксперимент проводится в рамках научного исследования по курсу <em>"Разработка интернет-приложений"</em>.
+                <br>
+                Решение этого теста займет у вас <em>не более 10 минут</em>. В каждом вопросе вы должны написать в поле "Ответ" свой ответ на вопрос <em>"Что делает эта программа"</em> и выбрать один из пяти вариантов сложности кода, где 1 - очень сложно разбираемый код, а 5 - легко читаемый код.
+                </p>
+
+                <br>
+
+                <p><button class="btn btn-lg btn-default" onclick="location.href='../polls/test/'">Начать эксперимент</button></p>
+            </div>
+            {% endblock %}
+
+
+        </div>
+
+        <footer class="footer">
+            <div class="container"> 
+                <p>&copy; МГТУ им. Н.Э. Баумана<br>Москва 2016<br>Авторы: Тодосиев Н.Д., Семенова А.Е. и анонимный копипастер</p>
+            </div>
+        </footer>
+    </body>
+</html>
