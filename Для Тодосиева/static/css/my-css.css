@@ -22,14 +22,14 @@ html {
 }
 body {
 	/* Отступ снизу, по высоте футера */
-	margin-bottom: 70px !important;
+	margin-bottom: 85px !important;
 }
 .footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	/* Фиксированная высота футера */
-	height: 70px;
+	height: 80px;
 	/*Фон футера*/
 	background-color: #f5f5f5;
 	/*Граница*/
