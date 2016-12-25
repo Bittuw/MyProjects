@@ -40,7 +40,7 @@ def test(request):
 
     
 def answer(request):
-    if request.session.get("user", 0) == 0:
+    if (request.session.get("user", 0) == 0 or request.session.get("time_start", 0) == 0):
         return HttpResponseRedirect("/polls/")
 
     if request.session.get('exit', False) == True:
