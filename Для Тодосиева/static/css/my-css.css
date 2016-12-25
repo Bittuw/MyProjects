@@ -1,0 +1,37 @@
+.navbar-default {  /*Задай свой цвет*/
+	/*Фон*/
+	background-color: #f8f8f8; 
+	/*Граница*/
+  	border-color: #e7e7e7; 
+}
+
+.img-size { /*Задай размер картинки*/
+	width: 50px;
+	height: 50px;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+.header {
+	padding-bottom: 20px;
+	border-bottom: 2px solid #e5e5e5;
+	margin-bottom: 20px;
+}
+body {
+	/* Отступ снизу, по высоте футера */
+	margin-bottom: 70px !important;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Фиксированная высота футера */
+	height: 70px;
+	/*Фон футера*/
+	background-color: #f5f5f5;
+	/*Граница*/
+	/*border-color: ;*/
+}
