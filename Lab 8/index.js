@@ -1,7 +1,4 @@
-function onDocumentLoad(){
-	console.log(new Date() * 1000);
-	const $form = $('.form');
-	$('button').on('click',function(){
+$('button').on('click',function(){
 		var points = [];
 		var from = parseInt($form.val());
 		var to = parseInt($(".to").val());
@@ -14,12 +11,4 @@ function onDocumentLoad(){
 		}
 		$.plot($("#placeholder"), [{ label: $fun, data: points}] , { yaxis: {max: 1}, legend: {show: true, position: "nw"}});
 		
-	})
-}
-
-onDocumentLoad();
-// $(onDocumentLoad);
-
-function ReDraw(from, to, fun, points) {
-
-}
+})
